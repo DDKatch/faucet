@@ -77,12 +77,12 @@ Rails.application.configure do
     # Do not dump schema after migrations.
     config.active_record.dump_schema_after_migration = false
 
-    Rails.application.config.middleware.use ExceptionNotification::Rack,
-        :ignore_exceptions => ['ActionView::MissingTemplate', 'ActionController::InvalidAuthenticityToken', 'ActionDispatch::RemoteIp::IpSpoofAttackError'] + ExceptionNotifier.ignored_exceptions,
-        :email => {
-            :email_prefix => "[PREFIX] ",
-            :sender_address => config.faucet.exception_notification['sender_address'],
-            :exception_recipients => config.faucet.exception_notification['exception_recipients']
-        }
-
+    # Rails.application.config.middleware.use ExceptionNotification::Rack,
+    #     :ignore_exceptions => ['ActionView::MissingTemplate', 'ActionController::InvalidAuthenticityToken', 'ActionDispatch::RemoteIp::IpSpoofAttackError'] + ExceptionNotifier.ignored_exceptions,
+    #     :email => {
+    #         :email_prefix => "[PREFIX] ",
+    #         :sender_address => config.faucet.exception_notification['sender_address'],
+    #         :exception_recipients => config.faucet.exception_notification['exception_recipients']
+    #     }
+    #
 end

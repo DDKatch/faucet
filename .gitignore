@@ -3,6 +3,7 @@
 /log/*
 /tmp/*
 /.idea
+config/database.yml
 config/secrets.yml
 config/faucet.yml
 config/deploy.yml

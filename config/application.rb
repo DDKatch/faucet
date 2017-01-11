@@ -26,21 +26,21 @@ module Faucet
         # Do not swallow errors in after_commit/after_rollback callbacks.
         config.active_record.raise_in_transactional_callbacks = true
 
-        config.action_mailer.default_url_options = {host: FAUCETCONF.default_url, port: FAUCETCONF.default_port}
-        config.action_mailer.delivery_method = :smtp
-        config.action_mailer.perform_deliveries = true
-        config.action_mailer.raise_delivery_errors = true
-        config.action_mailer.default_options = {from: 'no-reply@faucet.example.com'}
-        config.action_mailer.smtp_settings = {
-            address: FAUCETCONF.smtp['host'],
-            port: '587',
-            domain: FAUCETCONF.default_url,
-            user_name: FAUCETCONF.smtp['user_name'],
-            password: FAUCETCONF.smtp['password'],
-            authentication: :plain,
-            enable_starttls_auto: true
-        }
-        routes.default_url_options = config.action_mailer.default_url_options
+        # config.action_mailer.default_url_options = {host: FAUCETCONF.default_url, port: FAUCETCONF.default_port}
+        # config.action_mailer.delivery_method = :smtp
+        # config.action_mailer.perform_deliveries = true
+        # config.action_mailer.raise_delivery_errors = true
+        # config.action_mailer.default_options = {from: 'no-reply@faucet.example.com'}
+        # config.action_mailer.smtp_settings = {
+        #     address: FAUCETCONF.smtp['host'],
+        #     port: '587',
+        #     domain: FAUCETCONF.default_url,
+        #     user_name: FAUCETCONF.smtp['user_name'],
+        #     password: FAUCETCONF.smtp['password'],
+        #     authentication: :plain,
+        #     enable_starttls_auto: true
+        # }
+        # routes.default_url_options = config.action_mailer.default_url_options
         config.faucet = FAUCETCONF
     end
 end

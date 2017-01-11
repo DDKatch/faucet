@@ -7,12 +7,13 @@ require 'yaml'
 
 DEPLOY_CONF = YAML.load(File.read('config/deploy.yml'))
 
+set :term_mode, nil
 set :domain, DEPLOY_CONF['host']
 set :user, DEPLOY_CONF['user']
-set :deploy_to, '/www'
+set :deploy_to, '/var/faucet'
 set :repository, DEPLOY_CONF['repository']
 set :branch, DEPLOY_CONF['branch']
-set :shared_paths, ['log', 'config/faucet.yml', 'config/secrets.yml', 'public/wallet']
+set :shared_paths, ['log', 'config/faucet.yml', 'config/secrets.yml', 'config/database.yml' ,'public/wallet']
 set :rsync_options, %w[-az --force --recursive --delete --delete-excluded --progress --exclude-from=.gitignore --exclude 'public/*']
 
 task :environment do
