@@ -41,9 +41,12 @@ end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
-  gem 'capistrano', '~> 3.6'
-  gem 'capistrano-rails', '~> 1.2'
+  gem 'web-console'
+  gem 'capistrano',         require: false
+  gem 'capistrano-rvm',     require: false
+  gem 'capistrano-rails',   require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano3-puma',   require: false
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
@@ -57,8 +60,6 @@ gem 'email_validator'
 gem 'exception_notification'
 gem 'devise'
 gem 'devise-i18n'
-gem 'mina', '0.3.8', require: false
-gem 'mina-rsync', require: false
 gem 'omniauth'
 gem 'mandrill-api'
 gem 'browser'
