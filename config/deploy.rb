@@ -1,7 +1,8 @@
+require 'pry'
 require 'mina/git'
 require 'mina/bundler'
 require 'mina/rails'
-require 'mina/rbenv'
+require 'mina/rvm'
 require 'mina/rsync'
 require 'yaml'
 
@@ -13,11 +14,11 @@ set :user, DEPLOY_CONF['user']
 set :deploy_to, '/var/faucet'
 set :repository, DEPLOY_CONF['repository']
 set :branch, DEPLOY_CONF['branch']
-set :shared_paths, ['log', 'config/faucet.yml', 'config/secrets.yml', 'config/database.yml' ,'public/wallet']
+set :shared_paths, ['log', 'config/faucet.yml', 'config/secrets.yml', 'config/database.yml' ,'public/wallet', 'db/bitshares_faucet.sqlite3']
 set :rsync_options, %w[-az --force --recursive --delete --delete-excluded --progress --exclude-from=.gitignore --exclude 'public/*']
 
 task :environment do
-    invoke :'rbenv:load'
+  set :rvm_ruby_version, '2.2.3'
 end
 
 task :setup => :environment do

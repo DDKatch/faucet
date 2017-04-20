@@ -54,7 +54,7 @@ gem 'email_validator'
 gem 'exception_notification'
 gem 'devise'
 gem 'devise-i18n'
-gem 'mina', require: false
+gem 'mina', '0.3.8', require: false
 gem 'mina-rsync', require: false
 gem 'omniauth'
 gem 'mandrill-api'
