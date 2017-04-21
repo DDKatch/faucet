@@ -31,7 +31,7 @@ set :branch,          DEPLOY_CONF['branch']
 # set :keep_releases, 5
 
 ## Linked Files & Directories (Default None):
-set :linked_files, %w{config/database.yml config/secrets.yml config/faucet.yml}
+set :linked_files, %w{config/database.yml config/secrets.yml config/faucet.yml db/bitshares_faucet.sqlite3}
 set :linked_dirs,  %w{bin log tmp/pids tmp/cache tmp/sockets}
 
 # ps aux | grep puma    # Get puma pid
